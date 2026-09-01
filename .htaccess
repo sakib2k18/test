@@ -1,0 +1,15 @@
+# ---------------------------------------------------------------------------
+# KUET Bus Service - Apache configuration
+# ---------------------------------------------------------------------------
+# NOTE: the two ErrorDocument paths below start with the folder name of this
+# project inside htdocs. If you rename the folder (for example to
+# "university-bus-service"), change "/test/" here to match it.
+# ---------------------------------------------------------------------------
+
+ErrorDocument 404 /test/404.php
+ErrorDocument 403 /test/403.php
+
+# Never list the contents of a folder that has no index file.
+Options -Indexes
+
+DirectoryIndex index.php index.html

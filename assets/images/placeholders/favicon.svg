@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="KUET Bus Service">
+  <rect width="64" height="64" rx="16" fill="#0d2a4f"/>
+  <g fill="none" stroke="#ffffff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 40V22a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v18"/>
+    <path d="M18 30h28"/>
+    <path d="M16 40h32v3a2 2 0 0 1-2 2h-2v2a1.6 1.6 0 0 1-1.6 1.6h-1.8A1.6 1.6 0 0 1 39 47v-2H25v2a1.6 1.6 0 0 1-1.6 1.6h-1.8A1.6 1.6 0 0 1 20 47v-2h-2a2 2 0 0 1-2-2z"/>
+  </g>
+  <circle cx="24" cy="36" r="1.9" fill="#f2a71b"/>
+  <circle cx="40" cy="36" r="1.9" fill="#f2a71b"/>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Bus photo placeholder">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eef3fb"/>
+      <stop offset="100%" stop-color="#d6e2f4"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1d4b86"/>
+      <stop offset="100%" stop-color="#0d2a4f"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e4eefb"/>
+      <stop offset="100%" stop-color="#b9cfeb"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#sky)"/>
+
+  <!-- soft decorative circles -->
+  <circle cx="662" cy="96" r="52" fill="#f2a71b" opacity=".18"/>
+  <circle cx="130" cy="128" r="76" fill="#0d2a4f" opacity=".05"/>
+
+  <!-- road -->
+  <rect x="0" y="404" width="800" height="8" rx="4" fill="#b9c6dc"/>
+  <g fill="#f2a71b" opacity=".65">
+    <rect x="60"  y="432" width="66" height="7" rx="3.5"/>
+    <rect x="176" y="432" width="66" height="7" rx="3.5"/>
+    <rect x="292" y="432" width="66" height="7" rx="3.5"/>
+    <rect x="408" y="432" width="66" height="7" rx="3.5"/>
+    <rect x="524" y="432" width="66" height="7" rx="3.5"/>
+    <rect x="640" y="432" width="66" height="7" rx="3.5"/>
+  </g>
+
+  <!-- bus -->
+  <g>
+    <rect x="118" y="148" width="566" height="218" rx="30" fill="url(#body)"/>
+    <rect x="118" y="292" width="566" height="15" fill="#f2a71b"/>
+
+    <!-- side windows -->
+    <rect x="156" y="184" width="94" height="76" rx="12" fill="url(#glass)"/>
+    <rect x="266" y="184" width="94" height="76" rx="12" fill="url(#glass)"/>
+    <rect x="376" y="184" width="94" height="76" rx="12" fill="url(#glass)"/>
+    <rect x="486" y="184" width="72" height="76" rx="12" fill="url(#glass)"/>
+    <!-- windscreen -->
+    <path d="M576 184h72a16 16 0 0 1 16 16v60h-88z" fill="url(#glass)"/>
+
+    <!-- door -->
+    <rect x="486" y="270" width="72" height="96" rx="8" fill="#0a2140" opacity=".55"/>
+
+    <!-- destination board -->
+    <rect x="156" y="158" width="150" height="18" rx="6" fill="#0a2140" opacity=".6"/>
+
+    <!-- headlight -->
+    <rect x="666" y="286" width="18" height="26" rx="8" fill="#ffd77a"/>
+
+    <!-- wheels -->
+    <circle cx="238" cy="372" r="46" fill="#16233a"/>
+    <circle cx="238" cy="372" r="19" fill="#93a6c4"/>
+    <circle cx="566" cy="372" r="46" fill="#16233a"/>
+    <circle cx="566" cy="372" r="19" fill="#93a6c4"/>
+  </g>
+
+  <text x="400" y="474" text-anchor="middle"
+        font-family="Segoe UI, system-ui, Arial, sans-serif" font-size="21" font-weight="600" fill="#6c7d9b">
+    Bus photo not uploaded yet
+  </text>
+</svg>

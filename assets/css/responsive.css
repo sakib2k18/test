@@ -1,0 +1,237 @@
+/* ==========================================================================
+   KUET BUS SERVICE  -  RESPONSIVE RULES
+   --------------------------------------------------------------------------
+   All media queries of the project live here, ordered from the largest
+   screen down to the smallest. Tested layouts:
+     1920px / 1366px  desktop      1024px  laptop      768px  tablet
+      425px / 375px   mobile        320px  small mobile
+   ========================================================================== */
+
+/* ==========================================================================
+   LARGE DESKTOP  (>= 1440px)  -  give the content a little more room
+   ========================================================================== */
+@media (min-width: 1440px) {
+    :root {
+        --maxw: 1280px;
+        --gutter: 28px;
+        --section-y: 92px;
+    }
+}
+
+/* ==========================================================================
+   LAPTOP  (<= 1200px)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    :root { --section-y: 66px; }
+
+    .hero__inner { gap: 38px; }
+    .hero__float--a { left: -8px; }
+    .hero__float--b { right: -4px; }
+    .footer__grid { gap: 30px; }
+}
+
+/* ==========================================================================
+   TABLET LANDSCAPE / SMALL LAPTOP  (<= 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    /* The hero becomes a single column with the visual underneath */
+    .hero { padding-block: 56px 66px; }
+    .hero__inner {
+        grid-template-columns: 1fr;
+        gap: 44px;
+    }
+    .hero__lead { max-width: none; }
+    .hero__visual { max-width: 560px; margin-inline: auto; width: 100%; }
+
+    .footer__grid { grid-template-columns: 1fr 1fr; gap: 34px; }
+
+    .cta { padding: 42px 28px; }
+
+    /* Detail pages stack their two columns */
+    .detail-layout { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   TABLET  (<= 900px)  -  switch the navbar to the hamburger drawer
+   ========================================================================== */
+@media (max-width: 900px) {
+    .nav-links { display: none; }
+    .nav-actions .btn,
+    .nav-actions .nav-user { display: none; }
+    .nav-toggle { display: grid; margin-left: auto; }
+
+    .navbar__inner { min-height: 66px; }
+
+    .filter-bar .search-field,
+    .filter-bar .filter-actions { flex: 1 1 100%; }
+    .filter-bar .field { flex: 1 1 140px; }
+    .filter-actions .btn { flex: 1; }
+}
+
+/* ==========================================================================
+   SMALL TABLET / LARGE PHONE  (<= 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    :root {
+        --section-y: 52px;
+        --gutter: 16px;
+        --radius-lg: 16px;
+        --radius-xl: 20px;
+    }
+
+    body { font-size: 15.5px; }
+
+    .page-header { padding-block: 38px 42px; }
+
+    .section-head-row { flex-direction: column; align-items: stretch; }
+    .section-head-row .btn { align-self: flex-start; }
+
+    .grid { gap: 18px; }
+    .grid--cards,
+    .grid--wide { grid-template-columns: 1fr; }
+
+    .article { padding: 22px; }
+    .cta { padding: 34px 20px; }
+
+    .hero__facts { gap: 20px 26px; }
+    .hero__float { display: none; }   /* floating chips get in the way here */
+    .hero__panel { padding: 12px; }
+
+    /* -------------------------------------------------------------------
+       RESPONSIVE TABLES
+       Every <td> carries a data-label attribute in the PHP markup, so the
+       table can be redrawn as a stack of cards without losing meaning.
+       ------------------------------------------------------------------- */
+    .table--stack { min-width: 0; }
+    .table--stack thead { display: none; }
+    .table--stack tbody,
+    .table--stack tr,
+    .table--stack td { display: block; width: 100%; }
+    .table--stack tr {
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        margin-bottom: 14px;
+        padding: 6px 4px;
+        background: var(--surface);
+        box-shadow: var(--shadow-xs);
+    }
+    .table--stack tr:last-child { margin-bottom: 0; }
+    .table--stack td {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 9px 14px;
+        border-bottom: 1px dashed var(--border);
+        text-align: right;
+    }
+    .table--stack td:last-child { border-bottom: 0; }
+    .table--stack td::before {
+        content: attr(data-label);
+        font-size: .7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: .07em;
+        color: var(--muted);
+        text-align: left;
+        flex: none;
+    }
+    .table--stack td[data-label=""]::before { display: none; }
+    .table--stack .actions { justify-content: flex-end; }
+    .table--stack .cell-main { align-items: flex-end; }
+    .table--stack .cell-thumb { justify-content: flex-end; }
+
+    .footer { padding-top: 42px; }
+    .footer__grid { padding-bottom: 32px; }
+    .footer__bottom { flex-direction: column; text-align: center; }
+
+    .modal__box { padding: 24px 20px; }
+    .toast-stack { top: auto; bottom: 14px; right: 14px; left: 14px; width: auto; }
+}
+
+/* ==========================================================================
+   PHONE  (<= 600px)
+   ========================================================================== */
+@media (max-width: 600px) {
+    .footer__grid { grid-template-columns: 1fr; gap: 28px; }
+
+    .filter-bar .field { flex: 1 1 100%; }
+
+    .form-row { grid-template-columns: 1fr; }
+
+    .meta-grid { grid-template-columns: 1fr 1fr; }
+
+    .notice { flex-direction: column; gap: 14px; }
+    .notice__date {
+        width: auto;
+        display: inline-flex;
+        align-items: baseline;
+        gap: 7px;
+        padding: 6px 14px;
+    }
+    .notice__date b { font-size: 1.05rem; }
+
+    .hero__cta .btn,
+    .cta__actions .btn { flex: 1 1 100%; }
+
+    .form-actions { flex-direction: column; }
+    .form-actions .btn { width: 100%; }
+
+    .check-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ==========================================================================
+   SMALL PHONE  (<= 400px)  -  the 320px / 375px targets
+   ========================================================================== */
+@media (max-width: 400px) {
+    :root { --gutter: 14px; --section-y: 44px; }
+
+    body { font-size: 15px; }
+
+    .brand__text b { font-size: .92rem; }
+    .brand__text span { font-size: .6rem; }
+    .brand__mark { width: 38px; height: 38px; border-radius: 11px; }
+
+    .card__body { padding: 18px; }
+    .card__foot { padding: 14px 18px; }
+
+    .btn { padding: 11px 18px; }
+    .btn--lg { padding: 13px 22px; font-size: .95rem; }
+
+    .hero__facts { gap: 16px 22px; }
+    .hero__fact b { font-size: 1.4rem; }
+
+    .meta-grid { grid-template-columns: 1fr; }
+    .check-grid { grid-template-columns: 1fr; }
+
+    .stat-card { padding: 20px; }
+    .stat-card b { font-size: 1.7rem; }
+
+    .empty { padding: 44px 18px; }
+
+    .timeline { padding-left: 28px; }
+    .timeline li::before { left: -25px; }
+
+    .table--stack td { flex-direction: column; align-items: flex-start; text-align: left; gap: 3px; }
+    .table--stack .cell-main,
+    .table--stack .cell-thumb,
+    .table--stack .actions { justify-content: flex-start; align-items: flex-start; }
+}
+
+/* ==========================================================================
+   PRINT  -  a clean printable timetable
+   ========================================================================== */
+@media print {
+    .navbar,
+    .footer,
+    .filter-bar,
+    .hero__cta,
+    .cta,
+    .pagination,
+    .toast-stack,
+    .btn { display: none !important; }
+
+    body { background: #fff; color: #000; }
+    .card,
+    .table-wrap { box-shadow: none; border-color: #999; }
+}
