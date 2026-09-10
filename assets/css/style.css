@@ -1137,9 +1137,13 @@ p:last-child { margin-bottom: 0; }
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: 1.45fr .55fr;
+    grid-template-columns: 1.1fr .9fr;
     gap: 54px;
     align-items: center;
+    /* The hero band is full width, but its content stays a notch narrower
+       than the standard 1180px container, so the section reads compact. */
+    max-width: 1040px;
+    margin-inline: auto;
 }
 .hero h1 { color: #fff; margin-bottom: 18px; }
 .hero h1 em {
@@ -1200,11 +1204,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* Right-hand visual: the photo panel, kept to a strict 4:3 frame */
-.hero__visual {
-    position: relative;
-    max-width: 420px;
-    justify-self: end;
-}
+.hero__visual { position: relative; }
 .hero__panel {
     background: rgba(255, 255, 255, .1);
     border: 1px solid rgba(255, 255, 255, .2);
