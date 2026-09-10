@@ -1137,7 +1137,7 @@ p:last-child { margin-bottom: 0; }
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: 1.05fr .95fr;
+    grid-template-columns: 1.2fr .8fr;
     gap: 54px;
     align-items: center;
 }

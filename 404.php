@@ -30,8 +30,8 @@ require_once __DIR__ . '/includes/header.php';
                 The page or record you asked for does not exist any more, or the
                 link you followed is out of date.
             </p>
-            <img src="<?= e(url('assets/images/road.jpg')) ?>"
-                 alt="An empty road stretching into the distance"
+            <img src="<?= e(url('assets/images/wrong-turn.jpg')) ?>"
+                 alt="A university bus that has taken a wrong turn"
                  loading="lazy"
                  style="width:min(420px,100%);border-radius:var(--radius-lg);margin:8px auto 20px;display:block;">
             <div class="cluster" style="justify-content:center;">

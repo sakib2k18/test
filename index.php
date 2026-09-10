@@ -125,8 +125,8 @@ require_once __DIR__ . '/includes/header.php';
 
         <div class="hero__visual">
             <div class="hero__panel">
-                <img src="<?= e(url('assets/images/hero-bus.jpg')) ?>"
-                     alt="KUET shuttle bus waiting in front of the campus" width="720" height="540">
+                <img src="<?= e(url('assets/images/hero-photo.jpg')) ?>"
+                     alt="A university bus driving down the road" width="720" height="540">
             </div>
 
             <div class="hero__float hero__float--a">

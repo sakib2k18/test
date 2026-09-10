@@ -237,7 +237,7 @@ INSERT INTO `buses`
 (8, 'KUET Bus-08', 'KHU-METRO-JA-11-0458', 'Tata LP 709', 32, 'Regular', 'Maintenance', 'Jahangir Alam', '01711234508',
  'Currently in the university workshop for a scheduled engine overhaul and brake replacement. Expected back in service shortly.', 'bus-08.jpg'),
 (9, 'KUET Bus-09', 'KHU-METRO-JA-11-0459', 'Ashok Leyland Lynx', 42, 'Student Bus', 'Active', 'Kamal Hossain', '01711234509',
- 'Covers the Zero Point and Batiaghata road for students living outside the city centre.', NULL),
+ 'Covers the Zero Point and Batiaghata road for students living outside the city centre.', 'bus-09.jpg'),
 (10, 'KUET Bus-10', 'KHU-METRO-JA-11-0460', 'Tata Marcopolo', 36, 'Faculty Bus (AC)', 'Inactive', 'Rafiqul Islam', '01711234510',
  'Older air-conditioned coach kept as a stand-by vehicle. It is taken out only when another faculty bus is unavailable.', NULL);
 
