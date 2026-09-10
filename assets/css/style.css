@@ -1113,7 +1113,7 @@ p:last-child { margin-bottom: 0; }
         linear-gradient(150deg, var(--primary-dark) 0%, var(--primary) 48%, #123761 100%);
     color: #fff;
     overflow: hidden;
-    padding-block: 78px 88px;
+    padding-block: 60px 72px;
 }
 .hero::before {
     content: "";
@@ -1137,12 +1137,12 @@ p:last-child { margin-bottom: 0; }
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: 1.1fr .9fr;
-    gap: 54px;
+    /* The photo column gets the larger share so the hero panel dominates */
+    grid-template-columns: 1fr 1.08fr;
+    gap: 44px;
     align-items: center;
-    /* The hero band is full width, but its content stays a notch narrower
-       than the standard 1180px container, so the section reads compact. */
-    max-width: 1040px;
+    /* Keeps the content cluster compact instead of stretching edge to edge */
+    max-width: 1080px;
     margin-inline: auto;
 }
 .hero h1 { color: #fff; margin-bottom: 18px; }
