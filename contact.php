@@ -148,6 +148,11 @@ require_once __DIR__ . '/includes/header.php';
                         </ul>
                     </div>
                 </div>
+
+                <figure class="card__media" style="border-radius:var(--radius-lg);margin:8px 0 0;">
+                    <img src="<?= e(url('assets/images/contact-bus.jpg')) ?>"
+                         alt="A university bus waiting at the roadside" loading="lazy">
+                </figure>
             </div>
 
             <!-- ---------------- Contact form ---------------- -->

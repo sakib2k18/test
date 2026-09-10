@@ -64,8 +64,8 @@ require_once __DIR__ . '/includes/header.php';
 
             <div class="reveal">
                 <div class="hero__panel" style="background:var(--primary-soft);border-color:var(--primary-line);">
-                    <img src="<?= e(url('assets/images/placeholders/hero-bus.svg')) ?>"
-                         alt="Illustration of a university bus" loading="lazy">
+                    <img src="<?= e(url('assets/images/about-road.jpg')) ?>"
+                         alt="A university bus driving down the road towards campus" loading="lazy">
                 </div>
             </div>
         </div>
@@ -222,6 +222,24 @@ require_once __DIR__ . '/includes/header.php';
                         <?= icon($f['icon_key']) ?> <?= e($f['name']) ?>
                     </span>
                 <?php endforeach; ?>
+            </div>
+
+            <div class="grid grid--cards" style="margin-top:32px;">
+                <figure class="card__media reveal" style="border-radius:var(--radius-lg);margin:0;">
+                    <img src="<?= e(url('assets/images/interior-1.jpg')) ?>"
+                         alt="Passenger cabin of a university bus" loading="lazy">
+                    <span class="card__media-tag">Passenger cabin</span>
+                </figure>
+                <figure class="card__media reveal" style="border-radius:var(--radius-lg);margin:0;">
+                    <img src="<?= e(url('assets/images/interior-2.jpg')) ?>"
+                         alt="Rows of seats inside a university bus" loading="lazy">
+                    <span class="card__media-tag">Comfortable seating</span>
+                </figure>
+                <figure class="card__media reveal" style="border-radius:var(--radius-lg);margin:0;">
+                    <img src="<?= e(url('assets/images/interior-3.jpg')) ?>"
+                         alt="Front of the bus cabin seen from the entrance" loading="lazy">
+                    <span class="card__media-tag">On the road</span>
+                </figure>
             </div>
         <?php else: ?>
             <div class="empty">

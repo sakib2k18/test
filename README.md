@@ -147,6 +147,9 @@ Two ways to add a photo:
    safe unique name and stored automatically.
 2. **Manually —** copy an image into `assets/uploads/buses/` and then write
    its exact filename into the `image` column of the `buses` table.
+   The seed data already does this for buses 01–08 (`bus-01.jpg` … `bus-08.jpg`
+   ship with the project), so after importing the SQL those buses show real
+   photos immediately.
 
 Rules enforced by the server:
 
@@ -246,8 +249,8 @@ test/
 │   │   ├── main.js            Nav drawer, toasts, modal, previews, filters
 │   │   ├── validation.js      Client-side form validation rules
 │   │   └── admin.js           Sidebar drawer, chart, table filter
-│   ├── images/placeholders/   bus-placeholder.svg, hero-bus.svg, favicon.svg
-│   └── uploads/buses/         >>> PUT BUS PHOTOS HERE <<<
+│   ├── images/                 Site photos (hero, about, interiors) + placeholders/
+│   └── uploads/buses/          >>> PUT BUS PHOTOS HERE <<< (bus-01.jpg … bus-08.jpg)
 │
 ├── database/
 │   └── university_bus_service.sql   Schema + relationships + sample data
