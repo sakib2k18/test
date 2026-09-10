@@ -95,7 +95,7 @@ require_once __DIR__ . '/includes/header.php';
                                value="<?= e(old('email')) ?>"
                                placeholder="name@kuet.ac.bd"
                                data-label="Email address" data-rule-required data-rule-email
-                               autocomplete="email" autofocus required>
+                               autocomplete="off" data-no-autofill required>
                         <p class="field__error"></p>
                     </div>
 
@@ -106,7 +106,7 @@ require_once __DIR__ . '/includes/header.php';
                         <div class="input-group">
                             <input class="input" type="password" id="password" name="password"
                                    data-label="Password" data-rule-required
-                                   autocomplete="current-password" required>
+                                   autocomplete="new-password" data-no-autofill required>
                             <button class="input-toggle" type="button"
                                     data-toggle-password="password" aria-label="Show password">
                                 <?= icon('eye') ?>

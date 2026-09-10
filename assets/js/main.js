@@ -12,6 +12,7 @@
      8.  Live image preview for uploads
      9.  Instant client-side search / filter
      10. Auto-submitting filter controls + button loading states
+     11. Autofill guard for the login form
    ========================================================================== */
 (function () {
     'use strict';
@@ -381,6 +382,26 @@
     }
 
     /* =====================================================================
+       11. AUTOFILL GUARD FOR THE LOGIN FORM
+       ---------------------------------------------------------------------
+       Fields marked data-no-autofill are switched to readonly while the
+       page loads, because browsers skip readonly fields when they auto-fill
+       saved credentials. The field becomes editable again as soon as the
+       visitor focuses it, so typing and password managers still work.
+       ===================================================================== */
+    function initAutofillGuard() {
+        $$('[data-no-autofill]').forEach(function (field) {
+            field.setAttribute('readonly', 'readonly');
+            field.setAttribute('aria-readonly', 'false');
+            var unlock = function () {
+                field.removeAttribute('readonly');
+            };
+            field.addEventListener('focus', unlock);
+            field.addEventListener('pointerdown', unlock);
+        });
+    }
+
+    /* =====================================================================
        BOOT
        ===================================================================== */
     document.addEventListener('DOMContentLoaded', function () {
@@ -394,5 +415,6 @@
         initImagePreview();
         initLiveFilter();
         initFormBehaviour();
+        initAutofillGuard();
     });
 })();

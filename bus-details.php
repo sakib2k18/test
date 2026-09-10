@@ -53,6 +53,13 @@ $schedules = fetchAll(
     [$id]
 );
 
+/* The whole fleet, so every other bus can be opened straight from this page */
+$allBuses = fetchAll(
+    'SELECT id, bus_name, reg_number, bus_type, capacity, status, image
+       FROM buses
+      ORDER BY id'
+);
+
 require_once __DIR__ . '/includes/header.php';
 ?>
 
@@ -268,6 +275,63 @@ require_once __DIR__ . '/includes/header.php';
                 </a>
             </aside>
 
+        </div>
+    </div>
+</section>
+
+<!-- ==================================================================
+     THE WHOLE FLEET - every bus reachable from this page
+     ================================================================== -->
+<section class="section section--alt">
+    <div class="container">
+        <div class="section-head-row">
+            <div class="section-head">
+                <span class="eyebrow">The fleet</span>
+                <h2>All buses</h2>
+                <p>Every bus of the university fleet on one page - select any of them for details.</p>
+            </div>
+            <a class="btn btn--outline" href="<?= e(url('buses.php')) ?>">
+                Search the fleet <?= icon('arrow') ?>
+            </a>
+        </div>
+
+        <div class="grid grid--cards">
+            <?php foreach ($allBuses as $b): ?>
+                <?php $isCurrent = (int) $b['id'] === (int) $bus['id']; ?>
+                <article class="card card--hover reveal" <?= $isCurrent ? 'style="outline:2px solid var(--primary);outline-offset:3px;"' : '' ?>>
+                    <div class="card__media">
+                        <?php if ($isCurrent): ?>
+                            <img src="<?= e(busImage($b['image'])) ?>"
+                                 alt="Photo of <?= e($b['bus_name']) ?> (currently viewed)" loading="lazy">
+                        <?php else: ?>
+                            <a href="<?= e(url('bus-details.php?id=' . (int) $b['id'])) ?>">
+                                <img src="<?= e(busImage($b['image'])) ?>"
+                                     alt="Photo of <?= e($b['bus_name']) ?>" loading="lazy">
+                            </a>
+                        <?php endif; ?>
+                        <span class="badge <?= e(statusClass($b['status'])) ?> card__media-badge">
+                            <?= e($b['status']) ?>
+                        </span>
+                        <?php if ($isCurrent): ?>
+                            <span class="card__media-tag">Viewing now</span>
+                        <?php else: ?>
+                            <span class="card__media-tag"><?= e($b['bus_type']) ?></span>
+                        <?php endif; ?>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__title">
+                            <?php if ($isCurrent): ?>
+                                <?= e($b['bus_name']) ?>
+                            <?php else: ?>
+                                <a href="<?= e(url('bus-details.php?id=' . (int) $b['id'])) ?>">
+                                    <?= e($b['bus_name']) ?>
+                                </a>
+                            <?php endif; ?>
+                        </h3>
+                        <p class="text-muted" style="font-size:.82rem;"><?= e($b['reg_number']) ?></p>
+                    </div>
+                </article>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
